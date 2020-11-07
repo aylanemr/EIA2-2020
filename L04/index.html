@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="PotionMaker.js" defer></script>
+    <script src="interface.js"></script>
+    <script src="GenerateContent.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Henny+Penny&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Hexenkessel</h1>
+    <main>
+        <form id="formular">
+            <fieldset id="general">
+                <legend>Basics</legend>
+                <label for="Trankname">Trankname</label><br>
+                <input type="text" id="Trankname" name="Trankname" placeholder="Phial of Victory"><br>
+                <label for="textarea">Risiken und Nebenwirkungen</label><br>
+                <textarea id="textarea"></textarea>
+            </fieldset>
+            <fieldset>
+                <legend>Wirkung</legend>
+                <div id="Wirkung"></div>
+            </fieldset>
+        </form>
+        <form id="button">
+            <legend>Add Ingredients</legend><div id="Zutaten"></div>
+            <button type="button" id="ingredients">Add</button>
+            <legend>Heat-Action</legend>
+            <div>
+                <input name="heat" id="heat_input" type="range" min="1" max="60" step="1" value="20">
+                <input type="text" id="bubbleheat_input" value="20" class="time" disabled> °C <br>
+                <input type="checkbox" id="Konsistenz_Heat" name="heating" value="Konsistenz"> 
+                <label for="Konsistenz_Heat">Bis zu dieser Konsistenz:</label>
+                <p class="reveal">
+                    <select id="Konsistenz_value">
+                        <option value="zäh">zäh</option>
+                        <option value="cremig">cremig</option>
+                        <option value="luftig">luftig</option>
+                    </select>
+                </p>
+                <input type="checkbox" id="HeatTime" name="heating" value="HeatTime"> 
+                <label for="HeatTime">So lange</label>
+                <p class="reveal">
+                    <input id="HeatTime_value" type="range" min="1" max="200" step="1" value="1">
+                    <input type="text" id="bubbleHeatTime_value" value="20" class="time" disabled> min <br>
+                </p>
+                <input type="checkbox" id="HeatColor" name="heating" value="Color"> 
+                <label for="HeatColor">Bis zu dieser Farbe</label>
+                <p class="reveal"><input type="color" id="Color" name="color"></p>
+            </div>    
+            <button type="button" id="heat">Add</button>
+            
+            <legend>Stir-Action</legend>
+            <div>
+                <select name="stir" id="stiring">
+                    <option value="unterrühren">unterrühren</option>
+                    <option value="leicht">leicht Rühren</option>
+                    <option value="stark">stark Rühren</option>
+                </select><br>
+                <input type="checkbox" id="Konsistenz" name="stiring" value="Konsistenz"> 
+                <label for="Konsistenz">Bis zu dieser Konsistenz:</label>
+                <p class="reveal">
+                    <select id="Konsistenz_stir">
+                        <option value="zäh">zäh</option>
+                        <option value="cremig">cremig</option>
+                        <option value="luftig">luftig</option>
+                    </select>
+                </p>
+                <input type="checkbox" id="stirTime" name="stiring" value="stirTime"> 
+                <label for="stirTime">So lange</label>
+                <p class="reveal">
+                    <input id="stirTime_value" type="range" min="1" max="200" step="1" value="1"></input>
+                    <input type="text" id="bubblestirTime_value" value="20" class="time" disabled> min <br>
+                </p>
+                
+                <input type="checkbox" id="stirColor" name="stiring" value="stirColor"> 
+                <label for="stirColor">Bis zu dieser Farbe</label>
+                <p class="reveal"><input type="color" id="ColorStiring" name="color"></p>
+            </div>
+            <button type="button" id="stir">Add</button>
+            <button type="button" id="delete">Delete last</button>
+            <button type="button" id="deleteAll">Delete All</button>
+        </form>
+        <div id="recipe">
+            <h1>Rezept</h1>
+            <div id="basic"><h2>Allgemein</h2></div>
+            <h2>Anweisungen</h2>
+            <div id="action"></div>
+            <div id="total"></div>
+        </div>
+        
+    </main>
+</body>
+</html>

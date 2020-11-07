@@ -1,0 +1,71 @@
+body{
+    background-color:#ccb9e7;
+    color: rgb(246, 245, 245);
+    font-family: 'Ubuntu', sans-serif;
+}
+h1, h2{
+    font-family: 'Henny Penny';
+    font-weight: 200;
+    margin: 0;
+    letter-spacing: 1px;
+}
+legend{
+    font-family: 'Henny Penny';
+    font-size: larger;
+}
+main{
+    display: flex;
+    flex-flow: row;
+}
+.reveal{
+    opacity: 0;
+    max-height: 0px;
+    margin: 0;
+    overflow: hidden;
+}
+input[type="checkbox"]:checked + label + .reveal{
+    max-height: max-content;
+    opacity: 1;
+    overflow: visible;
+}
+.time{
+    width: 25px
+}
+#formular{
+    padding: 0 10px;
+}
+fieldset{
+    border: white 2px solid;
+}
+input[type="range"]{
+    cursor: pointer;
+}
+#button{
+    display: flex;
+    flex-flow: column;
+    padding: 0 20px;
+    width: max-content;
+}
+button{
+    margin: 5px;
+    border: none;
+    height: 40px;
+    border-radius: 20px;
+
+}
+button:hover{
+    border: none;
+    
+    background-color: #4A3469;
+    color: white;
+}
+button:focus{
+    outline: none;
+}
+button:hover{
+    transition: ease-out 1s;
+}
+p{
+    margin: 0;
+}
+
